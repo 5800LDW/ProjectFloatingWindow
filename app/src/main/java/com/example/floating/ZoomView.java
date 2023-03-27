@@ -20,6 +20,7 @@ public class ZoomView extends RelativeLayout {
     private float degree;
     private int moveType; // 0=未选择，1=拖动，2=缩放
 
+    
     public ZoomView(Context context) {
         this(context, null);
     }

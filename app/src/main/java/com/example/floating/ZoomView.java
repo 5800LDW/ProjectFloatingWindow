@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+
 public class ZoomView extends RelativeLayout {
     // 属性变量
     private float translationX; // 移动X

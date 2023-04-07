@@ -64,12 +64,9 @@ public class FloatService extends Service {
             @Override
             public void scale(float scale) {
 
-                //因为我把悬浮窗默认的宽是300， 所以这里就直接拿300作为宽高的初始值， 后面的缩放、放大都是在这个初始值上进行
-                float normalPx = dp2px(300f);
-                Log.e("TAG ", " normalPx = " + normalPx);
+                wmParams.width = (int)(zoomView.getOriginalWidth() * scale);
+                wmParams.height = (int)(zoomView.getOriginalHeight() * scale);
 
-                wmParams.width = (int) (normalPx * scale);
-                wmParams.height = (int) (normalPx * scale);
                 wm.updateViewLayout(view, wmParams);
 
             }
@@ -184,7 +181,7 @@ public class FloatService extends Service {
         detail_player.getFullscreenButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                detail_player.startWindowFullscreen(FloatService.this, false, true);
+//                detail_player.startWindowFullscreen(FloatService.this, false, true);
             }
         });
         //防止错位设置

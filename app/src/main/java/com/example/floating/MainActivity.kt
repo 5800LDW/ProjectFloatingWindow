@@ -1,15 +1,10 @@
 package com.example.floating
 
-import android.Manifest
-import android.app.NotificationManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
-import com.example.projectfloatingwindow.R
 import com.example.projectfloatingwindow.databinding.ActivityMainBinding
 
 
@@ -35,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 startFloatService()
             }
+
+            //activity退到后台
+            moveTaskToBack(true)
+
         }
 
     }
